@@ -14,7 +14,7 @@ import axios from "axios";
 import animationData from "../components/animation/typing.json";
 import io from "socket.io-client";
 
-const ENDPOINT = "http://localhost:5000";
+const ENDPOINT = "https://talk-a-tive.herokuapp.com";
 var socket, selectedChatCompare;
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
   const [messages, setMessages] = useState([]);
