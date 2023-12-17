@@ -14,7 +14,7 @@ import axios from "axios";
 import animationData from "../components/animation/typing.json";
 import io from "socket.io-client";
 
-const ENDPOINT = "http://localhost:5000";
+const ENDPOINT = "https://localhost:5000";
 var socket, selectedChatCompare;
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
   const [messages, setMessages] = useState([]);
@@ -74,7 +74,7 @@ const { selectedChat, setSelectedChat, user, notification, setNotification } =
   };
 
   useEffect(() => {
-    socket = io("http://localhost:5000");
+    socket = io("https://localhost:5000");
     socket.emit("setup", user);
     socket.on("connected", () => setSocketConnected(true));
     socket.on("typing", () => setIsTyping(true));
