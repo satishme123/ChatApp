@@ -74,7 +74,7 @@ const { selectedChat, setSelectedChat, user, notification, setNotification } =
   };
 
   useEffect(() => {
-    socket = io(ENDPOINT);
+    socket = io("http://localhost:5000");
     socket.emit("setup", user);
     socket.on("connected", () => setSocketConnected(true));
     socket.on("typing", () => setIsTyping(true));
