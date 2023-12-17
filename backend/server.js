@@ -9,11 +9,7 @@ const messageRoutes = require("./routes/messageRoutes");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 const path = require("path")
 const http = require("http");
-app.use(cors({
-  origin: 'https://chattalk-w4l9.onrender.com', 
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true,
-}));
+app.use(cors());
 
 connectDB();
 app.use(express.json());
@@ -51,7 +47,7 @@ const server = http.createServer(app)
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
-    origin: "http://localhost:3000",
+    origin: "http://localhost:5000",
   },
 });
 io.on("connection", (socket) => {
