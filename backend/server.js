@@ -10,7 +10,11 @@ const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 const path = require("path")
 const http = require("http");
 
-app.use(cors());
+app.use(cors(
+ origin: 'https://chattalk-w4l9.onrender.com', // Replace with your actual client origin
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+));
 connectDB();
 app.use(express.json());
 
