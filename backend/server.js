@@ -47,7 +47,7 @@ const server = http.createServer(app)
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
-    origin: "https://chattalk-w4l9.onrender.com",
+    origin: "http://localhost:3000",
   },
 });
 io.on("connection", (socket) => {
